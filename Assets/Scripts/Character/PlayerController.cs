@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-
-    public float speed;
+    [SerializeField]
+    private float speed;
 
     private Rigidbody rb;
 
-    float xInput;
-    float yInput;
+    private float xInput;
+    private float yInput;
 
     int score = 0;
     public int winScore;
@@ -43,7 +43,7 @@ public class NewBehaviourScript : MonoBehaviour
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
 
-        rb.AddForce(new Vector3(xInput, 0, yInput) * speed);
+        rb.AddForce(new Vector3(xInput, 0, yInput) * speed * Time.fixedDeltaTime, ForceMode.Acceleration);
     }
 
     private void OnTriggerEnter(Collider other)

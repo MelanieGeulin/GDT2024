@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class CoinScript : MonoBehaviour
 {
-    public float rotateSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private float rotateSpeed;
+
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    private void FixedUpdate()
     {
         transform.Rotate(new Vector3(0, 0, rotateSpeed));
     }

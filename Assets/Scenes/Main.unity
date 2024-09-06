@@ -493,7 +493,7 @@ Transform:
   m_GameObject: {fileID: 803175717}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2611115, y: -0, z: -0, w: 0.9653087}
-  m_LocalPosition: {x: 0, y: 13.34, z: -34.79}
+  m_LocalPosition: {x: 0, y: 10.6, z: -9.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -508,10 +508,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 803175717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810e6a5575be8cd4e8adea6eb9ca62d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 725676e94a607b745a4148b58a6be0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1692278985}
+  _toFollow: {fileID: 1692278981}
+  _smoothSpeed: 10
+  _offset: {x: 0, y: 10, z: -10}
 --- !u!1001 &939207153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -993,7 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d57683a819d8df41867ab852ee41dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 1000
   winScore: 7
   winText: {fileID: 1225126267}
 --- !u!54 &1692278987
