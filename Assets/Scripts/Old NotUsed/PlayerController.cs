@@ -8,6 +8,10 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float _jumpForce;
+
+    private KeyCode _jumpKey = KeyCode.Space;
 
     private Rigidbody rb;
 
@@ -36,6 +40,10 @@ public class NewBehaviourScript : MonoBehaviour
         {
             SceneManager.LoadScene("Main");
         }
+        if (Input.GetKeyDown(_jumpKey))
+        {
+            rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        }
     }
 
     private void FixedUpdate()
@@ -44,6 +52,8 @@ public class NewBehaviourScript : MonoBehaviour
         yInput = Input.GetAxis("Vertical");
 
         rb.AddForce(new Vector3(xInput, 0, yInput) * speed * Time.fixedDeltaTime, ForceMode.Acceleration);
+
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -60,5 +70,9 @@ public class NewBehaviourScript : MonoBehaviour
                 winText.SetActive(true);
             }
         }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        Debug.Log(collision.gameObject.tag);
     }
 }

@@ -7,6 +7,8 @@ TagManager:
   - PlayerObject
   - Wall
   - Coin
+  - Ground
+  - Ball
   layers:
   - Default
   - TransparentFX
